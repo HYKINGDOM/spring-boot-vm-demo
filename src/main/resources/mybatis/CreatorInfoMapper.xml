@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.java.talent.platform.vm.mapper.CreatorInfoMapper">
+
+
+  <resultMap type="com.java.talent.platform.vm.entity.CreatorInfo" id="CreatorInfoMap">
+    <result property="creatorId" column="creator_id" jdbcType="VARCHAR"/>
+    <result property="creatorName" column="creator_name" jdbcType="VARCHAR"/>
+    <result property="creatorNickname" column="creator_nickname" jdbcType="VARCHAR"/>
+    <result property="creatorPortrait" column="creator_portrait" jdbcType="VARCHAR"/>
+    <result property="mcnContract" column="mcn_contract" jdbcType="VARCHAR"/>
+    <result property="creatorCategories" column="creator_categories" jdbcType="VARCHAR"/>
+    <result property="ecommerceType" column="ecommerce_type" jdbcType="VARCHAR"/>
+    <result property="creatorVerification" column="creator_verification" jdbcType="VARCHAR"/>
+    <result property="description" column="description" jdbcType="VARCHAR"/>
+    <result property="homepage" column="homepage" jdbcType="VARCHAR"/>
+    <result property="email" column="email" jdbcType="VARCHAR"/>
+    <result property="country" column="country" jdbcType="VARCHAR"/>
+    <result property="capName" column="cap_name" jdbcType="VARCHAR"/>
+    <result property="addTime" column="add_time" jdbcType="DATE"/>
+    <result property="updateTime" column="update_time" jdbcType="DATE"/>
+    <result property="sourcePlatform" column="source_platform" jdbcType="VARCHAR"/>
+    <result property="fansNum" column="fans_num" jdbcType="INTEGER"/>
+    <result property="followers" column="followers" jdbcType="INTEGER"/>
+    <result property="likes" column="likes" jdbcType="INTEGER"/>
+    <result property="videos" column="videos" jdbcType="INTEGER"/>
+    <result property="livestreamings" column="livestreamings" jdbcType="INTEGER"/>
+    <result property="videoGpmMin" column="video_gpm_min" jdbcType="FLOAT"/>
+    <result property="videoGpmMax" column="video_gpm_max" jdbcType="FLOAT"/>
+    <result property="liveGpmMin" column="live_gpm_min" jdbcType="FLOAT"/>
+    <result property="liveGpmMax" column="live_gpm_max" jdbcType="FLOAT"/>
+    <result property="nationalRank" column="national_rank" jdbcType="INTEGER"/>
+    <result property="relatedShops" column="related_shops" jdbcType="INTEGER"/>
+    <result property="promotedProducts" column="promoted_products" jdbcType="INTEGER"/>
+    <result property="productCategoriesTop1" column="product_categories_top1" jdbcType="VARCHAR"/>
+    <result property="productCategoriesProportionTop1" column="product_categories_proportion_top1"
+      jdbcType="FLOAT"/>
+    <result property="productCategoriesTop2" column="product_categories_top2" jdbcType="VARCHAR"/>
+    <result property="productCategoriesProportionTop2" column="product_categories_proportion_top2"
+      jdbcType="FLOAT"/>
+    <result property="productCategoriesTop3" column="product_categories_top3" jdbcType="VARCHAR"/>
+    <result property="productCategoriesProportionTop3" column="product_categories_proportion_top3"
+      jdbcType="FLOAT"/>
+    <result property="productCategoriesTop4" column="product_categories_top4" jdbcType="VARCHAR"/>
+    <result property="productCategoriesProportionTop4" column="product_categories_proportion_top4"
+      jdbcType="FLOAT"/>
+    <result property="productCategoriesTop5" column="product_categories_top5" jdbcType="VARCHAR"/>
+    <result property="productCategoriesProportionTop5" column="product_categories_proportion_top5"
+      jdbcType="FLOAT"/>
+    <result property="fans1824Percent" column="fans_18_24_percent" jdbcType="FLOAT"/>
+    <result property="fans2534Percent" column="fans_25_34_percent" jdbcType="FLOAT"/>
+    <result property="fans35AbovePercent" column="fans_35_above_percent" jdbcType="FLOAT"/>
+    <result property="femalePercent" column="female_percent" jdbcType="FLOAT"/>
+    <result property="malePercent" column="male_percent" jdbcType="FLOAT"/>
+    <result property="recent30VideosViews" column="recent_30_videos_views" jdbcType="INTEGER"/>
+    <result property="recent30VideosLikes" column="recent_30_videos_likes" jdbcType="INTEGER"/>
+    <result property="recent30VideosComments" column="recent_30_videos_comments"
+      jdbcType="INTEGER"/>
+    <result property="recent30VideosShares" column="recent_30_videos_shares" jdbcType="INTEGER"/>
+    <result property="recent30DaysGmv" column="recent_30_days_gmv" jdbcType="FLOAT"/>
+    <result property="videoslikesGained7days" column="videoslikes_gained_7days" jdbcType="INTEGER"/>
+    <result property="ecommerceLives7days" column="ecommerce_lives_7days" jdbcType="INTEGER"/>
+    <result property="videos7days" column="videos_7days" jdbcType="INTEGER"/>
+    <result property="followersGained7days" column="followers_gained_7days" jdbcType="INTEGER"/>
+    <result property="videoIpm7days" column="video_ipm_7days" jdbcType="INTEGER"/>
+    <result property="ecommerceVideos28days" column="ecommerce_videos_28days" />
+    <result property="productsPromotedInVideos28days" column="products_promoted_in_videos_28days"
+      />
+    <result property="fansMainAge" column="fans_main_age" />
+    <result property="fansMainSex" column="fans_main_sex" />
+    <result property="videoGmv28days" column="video_gmv_28days"/>
+    <result property="liveGmv28days" column="live_gmv_28days" />
+    <result property="totalGmv28days" column="total_gmv_28days" />
+    <result property="productEcommerceOrdersMax" column="product_ecommerce_orders_max"
+      />
+  </resultMap>
+
+  <!-- 通过ID查询单条数据 -->
+  <select id="queryById" resultMap="CreatorInfoMap">
+    select creator_id,
+           creator_name,
+           creator_nickname,
+           creator_portrait,
+           mcn_contract,
+           creator_categories,
+           ecommerce_type,
+           creator_verification,
+           description,
+           homepage,
+           email,
+           country,
+           cap_name,
+           add_time,
+           update_time,
+           source_platform,
+           fans_num,
+           followers,
+           likes,
+           videos,
+           livestreamings,
+           video_gpm_min,
+           video_gpm_max,
+           live_gpm_min,
+           live_gpm_max,
+           national_rank,
+           related_shops,
+           promoted_products,
+           product_categories_top1,
+           product_categories_proportion_top1,
+           product_categories_top2,
+           product_categories_proportion_top2,
+           product_categories_top3,
+           product_categories_proportion_top3,
+           product_categories_top4,
+           product_categories_proportion_top4,
+           product_categories_top5,
+           product_categories_proportion_top5,
+           fans_18_24_percent,
+           fans_25_34_percent,
+           fans_35_above_percent,
+           female_percent,
+           male_percent,
+           recent_30_videos_views,
+           recent_30_videos_likes,
+           recent_30_videos_comments,
+           recent_30_videos_shares,
+           recent_30_days_gmv,
+           videoslikes_gained_7days,
+           ecommerce_lives_7days,
+           videos_7days,
+           followers_gained_7days,
+           video_ipm_7days,
+           ecommerce_videos_28days,
+           products_promoted_in_videos_28days,
+           fans_main_age,
+           fans_main_sex,
+           video_gmv_28days,
+           live_gmv_28days,
+           total_gmv_28days,
+           product_ecommerce_orders_max
+    from creator_info
+    where creator_id = #{creatorId}
+  </select>
+
+  <!--分页查询指定行数据-->
+  <select id="queryAllByLimit" resultMap="CreatorInfoMap">
+    select
+    creator_id,creator_name,creator_nickname,creator_portrait,mcn_contract,creator_categories,ecommerce_type,creator_verification,description,homepage,email,country,cap_name,add_time,update_time,source_platform,fans_num,followers,likes,videos,livestreamings,video_gpm_min,video_gpm_max,live_gpm_min,live_gpm_max,national_rank,related_shops,promoted_products,product_categories_top1,product_categories_proportion_top1,product_categories_top2,product_categories_proportion_top2,product_categories_top3,product_categories_proportion_top3,product_categories_top4,product_categories_proportion_top4,product_categories_top5,product_categories_proportion_top5,fans_18_24_percent,fans_25_34_percent,fans_35_above_percent,female_percent,male_percent,recent_30_videos_views,recent_30_videos_likes,recent_30_videos_comments,recent_30_videos_shares,recent_30_days_gmv,videoslikes_gained_7days,ecommerce_lives_7days,videos_7days,followers_gained_7days,video_ipm_7days,ecommerce_videos_28days,products_promoted_in_videos_28days,fans_main_age,fans_main_sex,video_gmv_28days,live_gmv_28days,total_gmv_28days,product_ecommerce_orders_max
+    from creator_info
+    <where>
+      <if test="creatorId != null and creatorId != ''">
+        and creator_id = #{creatorId}
+      </if>
+      <if test="creatorName != null and creatorName != ''">
+        and creator_name = #{creatorName}
+      </if>
+      <if test="creatorNickname != null and creatorNickname != ''">
+        and creator_nickname = #{creatorNickname}
+      </if>
+      <if test="creatorPortrait != null and creatorPortrait != ''">
+        and creator_portrait = #{creatorPortrait}
+      </if>
+      <if test="mcnContract != null and mcnContract != ''">
+        and mcn_contract = #{mcnContract}
+      </if>
+      <if test="creatorCategories != null and creatorCategories != ''">
+        and creator_categories = #{creatorCategories}
+      </if>
+      <if test="ecommerceType != null and ecommerceType != ''">
+        and ecommerce_type = #{ecommerceType}
+      </if>
+      <if test="creatorVerification != null and creatorVerification != ''">
+        and creator_verification = #{creatorVerification}
+      </if>
+      <if test="description != null and description != ''">
+        and description = #{description}
+      </if>
+      <if test="homepage != null and homepage != ''">
+        and homepage = #{homepage}
+      </if>
+      <if test="email != null and email != ''">
+        and email = #{email}
+      </if>
+      <if test="country != null and country != ''">
+        and country = #{country}
+      </if>
+      <if test="capName != null and capName != ''">
+        and cap_name = #{capName}
+      </if>
+      <if test="addTime != null and addTime != ''">
+        and add_time = #{addTime}
+      </if>
+      <if test="updateTime != null and updateTime != ''">
+        and update_time = #{updateTime}
+      </if>
+      <if test="sourcePlatform != null and sourcePlatform != ''">
+        and source_platform = #{sourcePlatform}
+      </if>
+      <if test="fansNum != null and fansNum != ''">
+        and fans_num = #{fansNum}
+      </if>
+      <if test="followers != null and followers != ''">
+        and followers = #{followers}
+      </if>
+      <if test="likes != null and likes != ''">
+        and likes = #{likes}
+      </if>
+      <if test="videos != null and videos != ''">
+        and videos = #{videos}
+      </if>
+      <if test="livestreamings != null and livestreamings != ''">
+        and livestreamings = #{livestreamings}
+      </if>
+      <if test="videoGpmMin != null and videoGpmMin != ''">
+        and video_gpm_min = #{videoGpmMin}
+      </if>
+      <if test="videoGpmMax != null and videoGpmMax != ''">
+        and video_gpm_max = #{videoGpmMax}
+      </if>
+      <if test="liveGpmMin != null and liveGpmMin != ''">
+        and live_gpm_min = #{liveGpmMin}
+      </if>
+      <if test="liveGpmMax != null and liveGpmMax != ''">
+        and live_gpm_max = #{liveGpmMax}
+      </if>
+      <if test="nationalRank != null and nationalRank != ''">
+        and national_rank = #{nationalRank}
+      </if>
+      <if test="relatedShops != null and relatedShops != ''">
+        and related_shops = #{relatedShops}
+      </if>
+      <if test="promotedProducts != null and promotedProducts != ''">
+        and promoted_products = #{promotedProducts}
+      </if>
+      <if test="productCategoriesTop1 != null and productCategoriesTop1 != ''">
+        and product_categories_top1 = #{productCategoriesTop1}
+      </if>
+      <if test="productCategoriesProportionTop1 != null and productCategoriesProportionTop1 != ''">
+        and product_categories_proportion_top1 = #{productCategoriesProportionTop1}
+      </if>
+      <if test="productCategoriesTop2 != null and productCategoriesTop2 != ''">
+        and product_categories_top2 = #{productCategoriesTop2}
+      </if>
+      <if test="productCategoriesProportionTop2 != null and productCategoriesProportionTop2 != ''">
+        and product_categories_proportion_top2 = #{productCategoriesProportionTop2}
+      </if>
+      <if test="productCategoriesTop3 != null and productCategoriesTop3 != ''">
+        and product_categories_top3 = #{productCategoriesTop3}
+      </if>
+      <if test="productCategoriesProportionTop3 != null and productCategoriesProportionTop3 != ''">
+        and product_categories_proportion_top3 = #{productCategoriesProportionTop3}
+      </if>
+      <if test="productCategoriesTop4 != null and productCategoriesTop4 != ''">
+        and product_categories_top4 = #{productCategoriesTop4}
+      </if>
+      <if test="productCategoriesProportionTop4 != null and productCategoriesProportionTop4 != ''">
+        and product_categories_proportion_top4 = #{productCategoriesProportionTop4}
+      </if>
+      <if test="productCategoriesTop5 != null and productCategoriesTop5 != ''">
+        and product_categories_top5 = #{productCategoriesTop5}
+      </if>
+      <if test="productCategoriesProportionTop5 != null and productCategoriesProportionTop5 != ''">
+        and product_categories_proportion_top5 = #{productCategoriesProportionTop5}
+      </if>
+      <if test="fans1824Percent != null and fans1824Percent != ''">
+        and fans_18_24_percent = #{fans1824Percent}
+      </if>
+      <if test="fans2534Percent != null and fans2534Percent != ''">
+        and fans_25_34_percent = #{fans2534Percent}
+      </if>
+      <if test="fans35AbovePercent != null and fans35AbovePercent != ''">
+        and fans_35_above_percent = #{fans35AbovePercent}
+      </if>
+      <if test="femalePercent != null and femalePercent != ''">
+        and female_percent = #{femalePercent}
+      </if>
+      <if test="malePercent != null and malePercent != ''">
+        and male_percent = #{malePercent}
+      </if>
+      <if test="recent30VideosViews != null and recent30VideosViews != ''">
+        and recent_30_videos_views = #{recent30VideosViews}
+      </if>
+      <if test="recent30VideosLikes != null and recent30VideosLikes != ''">
+        and recent_30_videos_likes = #{recent30VideosLikes}
+      </if>
+      <if test="recent30VideosComments != null and recent30VideosComments != ''">
+        and recent_30_videos_comments = #{recent30VideosComments}
+      </if>
+      <if test="recent30VideosShares != null and recent30VideosShares != ''">
+        and recent_30_videos_shares = #{recent30VideosShares}
+      </if>
+      <if test="recent30DaysGmv != null and recent30DaysGmv != ''">
+        and recent_30_days_gmv = #{recent30DaysGmv}
+      </if>
+      <if test="videoslikesGained7days != null and videoslikesGained7days != ''">
+        and videoslikes_gained_7days = #{videoslikesGained7days}
+      </if>
+      <if test="ecommerceLives7days != null and ecommerceLives7days != ''">
+        and ecommerce_lives_7days = #{ecommerceLives7days}
+      </if>
+      <if test="videos7days != null and videos7days != ''">
+        and videos_7days = #{videos7days}
+      </if>
+      <if test="followersGained7days != null and followersGained7days != ''">
+        and followers_gained_7days = #{followersGained7days}
+      </if>
+      <if test="videoIpm7days != null and videoIpm7days != ''">
+        and video_ipm_7days = #{videoIpm7days}
+      </if>
+      <if test="ecommerceVideos28days != null and ecommerceVideos28days != ''">
+        and ecommerce_videos_28days = #{ecommerceVideos28days}
+      </if>
+      <if test="productsPromotedInVideos28days != null and productsPromotedInVideos28days != ''">
+        and products_promoted_in_videos_28days = #{productsPromotedInVideos28days}
+      </if>
+      <if test="fansMainAge != null and fansMainAge != ''">
+        and fans_main_age = #{fansMainAge}
+      </if>
+      <if test="fansMainSex != null and fansMainSex != ''">
+        and fans_main_sex = #{fansMainSex}
+      </if>
+      <if test="videoGmv28days != null and videoGmv28days != ''">
+        and video_gmv_28days = #{videoGmv28days}
+      </if>
+      <if test="liveGmv28days != null and liveGmv28days != ''">
+        and live_gmv_28days = #{liveGmv28days}
+      </if>
+      <if test="totalGmv28days != null and totalGmv28days != ''">
+        and total_gmv_28days = #{totalGmv28days}
+      </if>
+      <if test="productEcommerceOrdersMax != null and productEcommerceOrdersMax != ''">
+        and product_ecommerce_orders_max = #{productEcommerceOrdersMax}
+      </if>
+    </where>
+  </select>
+
+  <!--统计总行数-->
+  <select id="count" resultType="java.lang.Long">
+    select count(1)
+    from creator_info
+    <where>
+      <if test="creatorId != null and creatorId != ''">
+        and creator_id = #{creatorId}
+      </if>
+      <if test="creatorName != null and creatorName != ''">
+        and creator_name = #{creatorName}
+      </if>
+      <if test="creatorNickname != null and creatorNickname != ''">
+        and creator_nickname = #{creatorNickname}
+      </if>
+      <if test="creatorPortrait != null and creatorPortrait != ''">
+        and creator_portrait = #{creatorPortrait}
+      </if>
+      <if test="mcnContract != null and mcnContract != ''">
+        and mcn_contract = #{mcnContract}
+      </if>
+      <if test="creatorCategories != null and creatorCategories != ''">
+        and creator_categories = #{creatorCategories}
+      </if>
+      <if test="ecommerceType != null and ecommerceType != ''">
+        and ecommerce_type = #{ecommerceType}
+      </if>
+      <if test="creatorVerification != null and creatorVerification != ''">
+        and creator_verification = #{creatorVerification}
+      </if>
+      <if test="description != null and description != ''">
+        and description = #{description}
+      </if>
+      <if test="homepage != null and homepage != ''">
+        and homepage = #{homepage}
+      </if>
+      <if test="email != null and email != ''">
+        and email = #{email}
+      </if>
+      <if test="country != null and country != ''">
+        and country = #{country}
+      </if>
+      <if test="capName != null and capName != ''">
+        and cap_name = #{capName}
+      </if>
+      <if test="addTime != null and addTime != ''">
+        and add_time = #{addTime}
+      </if>
+      <if test="updateTime != null and updateTime != ''">
+        and update_time = #{updateTime}
+      </if>
+      <if test="sourcePlatform != null and sourcePlatform != ''">
+        and source_platform = #{sourcePlatform}
+      </if>
+      <if test="fansNum != null and fansNum != ''">
+        and fans_num = #{fansNum}
+      </if>
+      <if test="followers != null and followers != ''">
+        and followers = #{followers}
+      </if>
+      <if test="likes != null and likes != ''">
+        and likes = #{likes}
+      </if>
+      <if test="videos != null and videos != ''">
+        and videos = #{videos}
+      </if>
+      <if test="livestreamings != null and livestreamings != ''">
+        and livestreamings = #{livestreamings}
+      </if>
+      <if test="videoGpmMin != null and videoGpmMin != ''">
+        and video_gpm_min = #{videoGpmMin}
+      </if>
+      <if test="videoGpmMax != null and videoGpmMax != ''">
+        and video_gpm_max = #{videoGpmMax}
+      </if>
+      <if test="liveGpmMin != null and liveGpmMin != ''">
+        and live_gpm_min = #{liveGpmMin}
+      </if>
+      <if test="liveGpmMax != null and liveGpmMax != ''">
+        and live_gpm_max = #{liveGpmMax}
+      </if>
+      <if test="nationalRank != null and nationalRank != ''">
+        and national_rank = #{nationalRank}
+      </if>
+      <if test="relatedShops != null and relatedShops != ''">
+        and related_shops = #{relatedShops}
+      </if>
+      <if test="promotedProducts != null and promotedProducts != ''">
+        and promoted_products = #{promotedProducts}
+      </if>
+      <if test="productCategoriesTop1 != null and productCategoriesTop1 != ''">
+        and product_categories_top1 = #{productCategoriesTop1}
+      </if>
+      <if test="productCategoriesProportionTop1 != null and productCategoriesProportionTop1 != ''">
+        and product_categories_proportion_top1 = #{productCategoriesProportionTop1}
+      </if>
+      <if test="productCategoriesTop2 != null and productCategoriesTop2 != ''">
+        and product_categories_top2 = #{productCategoriesTop2}
+      </if>
+      <if test="productCategoriesProportionTop2 != null and productCategoriesProportionTop2 != ''">
+        and product_categories_proportion_top2 = #{productCategoriesProportionTop2}
+      </if>
+      <if test="productCategoriesTop3 != null and productCategoriesTop3 != ''">
+        and product_categories_top3 = #{productCategoriesTop3}
+      </if>
+      <if test="productCategoriesProportionTop3 != null and productCategoriesProportionTop3 != ''">
+        and product_categories_proportion_top3 = #{productCategoriesProportionTop3}
+      </if>
+      <if test="productCategoriesTop4 != null and productCategoriesTop4 != ''">
+        and product_categories_top4 = #{productCategoriesTop4}
+      </if>
+      <if test="productCategoriesProportionTop4 != null and productCategoriesProportionTop4 != ''">
+        and product_categories_proportion_top4 = #{productCategoriesProportionTop4}
+      </if>
+      <if test="productCategoriesTop5 != null and productCategoriesTop5 != ''">
+        and product_categories_top5 = #{productCategoriesTop5}
+      </if>
+      <if test="productCategoriesProportionTop5 != null and productCategoriesProportionTop5 != ''">
+        and product_categories_proportion_top5 = #{productCategoriesProportionTop5}
+      </if>
+      <if test="fans1824Percent != null and fans1824Percent != ''">
+        and fans_18_24_percent = #{fans1824Percent}
+      </if>
+      <if test="fans2534Percent != null and fans2534Percent != ''">
+        and fans_25_34_percent = #{fans2534Percent}
+      </if>
+      <if test="fans35AbovePercent != null and fans35AbovePercent != ''">
+        and fans_35_above_percent = #{fans35AbovePercent}
+      </if>
+      <if test="femalePercent != null and femalePercent != ''">
+        and female_percent = #{femalePercent}
+      </if>
+      <if test="malePercent != null and malePercent != ''">
+        and male_percent = #{malePercent}
+      </if>
+      <if test="recent30VideosViews != null and recent30VideosViews != ''">
+        and recent_30_videos_views = #{recent30VideosViews}
+      </if>
+      <if test="recent30VideosLikes != null and recent30VideosLikes != ''">
+        and recent_30_videos_likes = #{recent30VideosLikes}
+      </if>
+      <if test="recent30VideosComments != null and recent30VideosComments != ''">
+        and recent_30_videos_comments = #{recent30VideosComments}
+      </if>
+      <if test="recent30VideosShares != null and recent30VideosShares != ''">
+        and recent_30_videos_shares = #{recent30VideosShares}
+      </if>
+      <if test="recent30DaysGmv != null and recent30DaysGmv != ''">
+        and recent_30_days_gmv = #{recent30DaysGmv}
+      </if>
+      <if test="videoslikesGained7days != null and videoslikesGained7days != ''">
+        and videoslikes_gained_7days = #{videoslikesGained7days}
+      </if>
+      <if test="ecommerceLives7days != null and ecommerceLives7days != ''">
+        and ecommerce_lives_7days = #{ecommerceLives7days}
+      </if>
+      <if test="videos7days != null and videos7days != ''">
+        and videos_7days = #{videos7days}
+      </if>
+      <if test="followersGained7days != null and followersGained7days != ''">
+        and followers_gained_7days = #{followersGained7days}
+      </if>
+      <if test="videoIpm7days != null and videoIpm7days != ''">
+        and video_ipm_7days = #{videoIpm7days}
+      </if>
+      <if test="ecommerceVideos28days != null and ecommerceVideos28days != ''">
+        and ecommerce_videos_28days = #{ecommerceVideos28days}
+      </if>
+      <if test="productsPromotedInVideos28days != null and productsPromotedInVideos28days != ''">
+        and products_promoted_in_videos_28days = #{productsPromotedInVideos28days}
+      </if>
+      <if test="fansMainAge != null and fansMainAge != ''">
+        and fans_main_age = #{fansMainAge}
+      </if>
+      <if test="fansMainSex != null and fansMainSex != ''">
+        and fans_main_sex = #{fansMainSex}
+      </if>
+      <if test="videoGmv28days != null and videoGmv28days != ''">
+        and video_gmv_28days = #{videoGmv28days}
+      </if>
+      <if test="liveGmv28days != null and liveGmv28days != ''">
+        and live_gmv_28days = #{liveGmv28days}
+      </if>
+      <if test="totalGmv28days != null and totalGmv28days != ''">
+        and total_gmv_28days = #{totalGmv28days}
+      </if>
+      <if test="productEcommerceOrdersMax != null and productEcommerceOrdersMax != ''">
+        and product_ecommerce_orders_max = #{productEcommerceOrdersMax}
+      </if>
+    </where>
+  </select>
+
+  <!--新增数据-->
+  <insert id="insert" keyProperty="creator_id" useGeneratedKeys="true">
+    insert into creator_info(creator_id, creator_name, creator_nickname, creator_portrait,
+                             mcn_contract, creator_categories, ecommerce_type, creator_verification,
+                             description, homepage, email, country, cap_name, add_time, update_time,
+                             source_platform, fans_num, followers, likes, videos, livestreamings,
+                             video_gpm_min, video_gpm_max, live_gpm_min, live_gpm_max,
+                             national_rank, related_shops, promoted_products,
+                             product_categories_top1, product_categories_proportion_top1,
+                             product_categories_top2, product_categories_proportion_top2,
+                             product_categories_top3, product_categories_proportion_top3,
+                             product_categories_top4, product_categories_proportion_top4,
+                             product_categories_top5, product_categories_proportion_top5,
+                             fans_18_24_percent, fans_25_34_percent, fans_35_above_percent,
+                             female_percent, male_percent, recent_30_videos_views,
+                             recent_30_videos_likes, recent_30_videos_comments,
+                             recent_30_videos_shares, recent_30_days_gmv, videoslikes_gained_7days,
+                             ecommerce_lives_7days, videos_7days, followers_gained_7days,
+                             video_ipm_7days, ecommerce_videos_28days,
+                             products_promoted_in_videos_28days, fans_main_age, fans_main_sex,
+                             video_gmv_28days, live_gmv_28days, total_gmv_28days,
+                             product_ecommerce_orders_max)
+    values (#{creatorId}, #{creatorName}, #{creatorNickname}, #{creatorPortrait}, #{mcnContract},
+            #{creatorCategories}, #{ecommerceType}, #{creatorVerification}, #{description},
+            #{homepage}, #{email}, #{country}, #{capName}, #{addTime}, #{updateTime},
+            #{sourcePlatform}, #{fansNum}, #{followers}, #{likes}, #{videos}, #{livestreamings},
+            #{videoGpmMin}, #{videoGpmMax}, #{liveGpmMin}, #{liveGpmMax}, #{nationalRank},
+            #{relatedShops}, #{promotedProducts}, #{productCategoriesTop1},
+            #{productCategoriesProportionTop1}, #{productCategoriesTop2},
+            #{productCategoriesProportionTop2}, #{productCategoriesTop3},
+            #{productCategoriesProportionTop3}, #{productCategoriesTop4},
+            #{productCategoriesProportionTop4}, #{productCategoriesTop5},
+            #{productCategoriesProportionTop5}, #{fans1824Percent}, #{fans2534Percent},
+            #{fans35AbovePercent}, #{femalePercent}, #{malePercent}, #{recent30VideosViews},
+            #{recent30VideosLikes}, #{recent30VideosComments}, #{recent30VideosShares},
+            #{recent30DaysGmv}, #{videoslikesGained7days}, #{ecommerceLives7days}, #{videos7days},
+            #{followersGained7days}, #{videoIpm7days}, #{ecommerceVideos28days},
+            #{productsPromotedInVideos28days}, #{fansMainAge}, #{fansMainSex}, #{videoGmv28days},
+            #{liveGmv28days}, #{totalGmv28days}, #{productEcommerceOrdersMax})
+  </insert>
+
+  <!-- 批量新增数据 -->
+  <insert id="insertBatch" keyProperty="creator_id" useGeneratedKeys="true">
+    insert into
+    creator_info(creator_id,creator_name,creator_nickname,creator_portrait,mcn_contract,creator_categories,ecommerce_type,creator_verification,description,homepage,email,country,cap_name,add_time,update_time,source_platform,fans_num,followers,likes,videos,livestreamings,video_gpm_min,video_gpm_max,live_gpm_min,live_gpm_max,national_rank,related_shops,promoted_products,product_categories_top1,product_categories_proportion_top1,product_categories_top2,product_categories_proportion_top2,product_categories_top3,product_categories_proportion_top3,product_categories_top4,product_categories_proportion_top4,product_categories_top5,product_categories_proportion_top5,fans_18_24_percent,fans_25_34_percent,fans_35_above_percent,female_percent,male_percent,recent_30_videos_views,recent_30_videos_likes,recent_30_videos_comments,recent_30_videos_shares,recent_30_days_gmv,videoslikes_gained_7days,ecommerce_lives_7days,videos_7days,followers_gained_7days,video_ipm_7days,ecommerce_videos_28days,products_promoted_in_videos_28days,fans_main_age,fans_main_sex,video_gmv_28days,live_gmv_28days,total_gmv_28days,product_ecommerce_orders_max)
+    values
+    <foreach collection="entities" item="entity" separator=",">
+      (#{entity.creatorId},#{entity.creatorName},#{entity.creatorNickname},#{entity.creatorPortrait},#{entity.mcnContract},#{entity.creatorCategories},#{entity.ecommerceType},#{entity.creatorVerification},#{entity.description},#{entity.homepage},#{entity.email},#{entity.country},#{entity.capName},#{entity.addTime},#{entity.updateTime},#{entity.sourcePlatform},#{entity.fansNum},#{entity.followers},#{entity.likes},#{entity.videos},#{entity.livestreamings},#{entity.videoGpmMin},#{entity.videoGpmMax},#{entity.liveGpmMin},#{entity.liveGpmMax},#{entity.nationalRank},#{entity.relatedShops},#{entity.promotedProducts},#{entity.productCategoriesTop1},#{entity.productCategoriesProportionTop1},#{entity.productCategoriesTop2},#{entity.productCategoriesProportionTop2},#{entity.productCategoriesTop3},#{entity.productCategoriesProportionTop3},#{entity.productCategoriesTop4},#{entity.productCategoriesProportionTop4},#{entity.productCategoriesTop5},#{entity.productCategoriesProportionTop5},#{entity.fans1824Percent},#{entity.fans2534Percent},#{entity.fans35AbovePercent},#{entity.femalePercent},#{entity.malePercent},#{entity.recent30VideosViews},#{entity.recent30VideosLikes},#{entity.recent30VideosComments},#{entity.recent30VideosShares},#{entity.recent30DaysGmv},#{entity.videoslikesGained7days},#{entity.ecommerceLives7days},#{entity.videos7days},#{entity.followersGained7days},#{entity.videoIpm7days},#{entity.ecommerceVideos28days},#{entity.productsPromotedInVideos28days},#{entity.fansMainAge},#{entity.fansMainSex},#{entity.videoGmv28days},#{entity.liveGmv28days},#{entity.totalGmv28days},#{entity.productEcommerceOrdersMax})
+    </foreach>
+  </insert>
+
+  <!-- 批量新增或按主键更新数据 -->
+  <insert id="insertOrUpdateBatch" keyProperty="creator_id" useGeneratedKeys="true">
+    insert into
+    creator_info(creator_id,creator_name,creator_nickname,creator_portrait,mcn_contract,creator_categories,ecommerce_type,creator_verification,description,homepage,email,country,cap_name,add_time,update_time,source_platform,fans_num,followers,likes,videos,livestreamings,video_gpm_min,video_gpm_max,live_gpm_min,live_gpm_max,national_rank,related_shops,promoted_products,product_categories_top1,product_categories_proportion_top1,product_categories_top2,product_categories_proportion_top2,product_categories_top3,product_categories_proportion_top3,product_categories_top4,product_categories_proportion_top4,product_categories_top5,product_categories_proportion_top5,fans_18_24_percent,fans_25_34_percent,fans_35_above_percent,female_percent,male_percent,recent_30_videos_views,recent_30_videos_likes,recent_30_videos_comments,recent_30_videos_shares,recent_30_days_gmv,videoslikes_gained_7days,ecommerce_lives_7days,videos_7days,followers_gained_7days,video_ipm_7days,ecommerce_videos_28days,products_promoted_in_videos_28days,fans_main_age,fans_main_sex,video_gmv_28days,live_gmv_28days,total_gmv_28days,product_ecommerce_orders_max)
+    values
+    <foreach collection="entities" item="entity" separator=",">
+      (#{entity.creatorId},#{entity.creatorName},#{entity.creatorNickname},#{entity.creatorPortrait},#{entity.mcnContract},#{entity.creatorCategories},#{entity.ecommerceType},#{entity.creatorVerification},#{entity.description},#{entity.homepage},#{entity.email},#{entity.country},#{entity.capName},#{entity.addTime},#{entity.updateTime},#{entity.sourcePlatform},#{entity.fansNum},#{entity.followers},#{entity.likes},#{entity.videos},#{entity.livestreamings},#{entity.videoGpmMin},#{entity.videoGpmMax},#{entity.liveGpmMin},#{entity.liveGpmMax},#{entity.nationalRank},#{entity.relatedShops},#{entity.promotedProducts},#{entity.productCategoriesTop1},#{entity.productCategoriesProportionTop1},#{entity.productCategoriesTop2},#{entity.productCategoriesProportionTop2},#{entity.productCategoriesTop3},#{entity.productCategoriesProportionTop3},#{entity.productCategoriesTop4},#{entity.productCategoriesProportionTop4},#{entity.productCategoriesTop5},#{entity.productCategoriesProportionTop5},#{entity.fans1824Percent},#{entity.fans2534Percent},#{entity.fans35AbovePercent},#{entity.femalePercent},#{entity.malePercent},#{entity.recent30VideosViews},#{entity.recent30VideosLikes},#{entity.recent30VideosComments},#{entity.recent30VideosShares},#{entity.recent30DaysGmv},#{entity.videoslikesGained7days},#{entity.ecommerceLives7days},#{entity.videos7days},#{entity.followersGained7days},#{entity.videoIpm7days},#{entity.ecommerceVideos28days},#{entity.productsPromotedInVideos28days},#{entity.fansMainAge},#{entity.fansMainSex},#{entity.videoGmv28days},#{entity.liveGmv28days},#{entity.totalGmv28days},#{entity.productEcommerceOrdersMax})
+    </foreach>
+    on duplicate key update
+    creator_id=values(creator_id),
+    creator_name=values(creator_name),
+    creator_nickname=values(creator_nickname),
+    creator_portrait=values(creator_portrait),
+    mcn_contract=values(mcn_contract),
+    creator_categories=values(creator_categories),
+    ecommerce_type=values(ecommerce_type),
+    creator_verification=values(creator_verification),
+    description=values(description),
+    homepage=values(homepage),
+    email=values(email),
+    country=values(country),
+    cap_name=values(cap_name),
+    add_time=values(add_time),
+    update_time=values(update_time),
+    source_platform=values(source_platform),
+    fans_num=values(fans_num),
+    followers=values(followers),
+    likes=values(likes),
+    videos=values(videos),
+    livestreamings=values(livestreamings),
+    video_gpm_min=values(video_gpm_min),
+    video_gpm_max=values(video_gpm_max),
+    live_gpm_min=values(live_gpm_min),
+    live_gpm_max=values(live_gpm_max),
+    national_rank=values(national_rank),
+    related_shops=values(related_shops),
+    promoted_products=values(promoted_products),
+    product_categories_top1=values(product_categories_top1),
+    product_categories_proportion_top1=values(product_categories_proportion_top1),
+    product_categories_top2=values(product_categories_top2),
+    product_categories_proportion_top2=values(product_categories_proportion_top2),
+    product_categories_top3=values(product_categories_top3),
+    product_categories_proportion_top3=values(product_categories_proportion_top3),
+    product_categories_top4=values(product_categories_top4),
+    product_categories_proportion_top4=values(product_categories_proportion_top4),
+    product_categories_top5=values(product_categories_top5),
+    product_categories_proportion_top5=values(product_categories_proportion_top5),
+    fans_18_24_percent=values(fans_18_24_percent),
+    fans_25_34_percent=values(fans_25_34_percent),
+    fans_35_above_percent=values(fans_35_above_percent),
+    female_percent=values(female_percent),
+    male_percent=values(male_percent),
+    recent_30_videos_views=values(recent_30_videos_views),
+    recent_30_videos_likes=values(recent_30_videos_likes),
+    recent_30_videos_comments=values(recent_30_videos_comments),
+    recent_30_videos_shares=values(recent_30_videos_shares),
+    recent_30_days_gmv=values(recent_30_days_gmv),
+    videoslikes_gained_7days=values(videoslikes_gained_7days),
+    ecommerce_lives_7days=values(ecommerce_lives_7days),
+    videos_7days=values(videos_7days),
+    followers_gained_7days=values(followers_gained_7days),
+    video_ipm_7days=values(video_ipm_7days),
+    ecommerce_videos_28days=values(ecommerce_videos_28days),
+    products_promoted_in_videos_28days=values(products_promoted_in_videos_28days),
+    fans_main_age=values(fans_main_age),
+    fans_main_sex=values(fans_main_sex),
+    video_gmv_28days=values(video_gmv_28days),
+    live_gmv_28days=values(live_gmv_28days),
+    total_gmv_28days=values(total_gmv_28days),
+    product_ecommerce_orders_max=values(product_ecommerce_orders_max)
+  </insert>
+
+  <!-- 更新数据 -->
+  <update id="update">
+    update creator_info
+    <set>
+      <if test="creatorId != null and creatorId != ''">
+        creator_id = #{creatorId},
+      </if>
+      <if test="creatorName != null and creatorName != ''">
+        creator_name = #{creatorName},
+      </if>
+      <if test="creatorNickname != null and creatorNickname != ''">
+        creator_nickname = #{creatorNickname},
+      </if>
+      <if test="creatorPortrait != null and creatorPortrait != ''">
+        creator_portrait = #{creatorPortrait},
+      </if>
+      <if test="mcnContract != null and mcnContract != ''">
+        mcn_contract = #{mcnContract},
+      </if>
+      <if test="creatorCategories != null and creatorCategories != ''">
+        creator_categories = #{creatorCategories},
+      </if>
+      <if test="ecommerceType != null and ecommerceType != ''">
+        ecommerce_type = #{ecommerceType},
+      </if>
+      <if test="creatorVerification != null and creatorVerification != ''">
+        creator_verification = #{creatorVerification},
+      </if>
+      <if test="description != null and description != ''">
+        description = #{description},
+      </if>
+      <if test="homepage != null and homepage != ''">
+        homepage = #{homepage},
+      </if>
+      <if test="email != null and email != ''">
+        email = #{email},
+      </if>
+      <if test="country != null and country != ''">
+        country = #{country},
+      </if>
+      <if test="capName != null and capName != ''">
+        cap_name = #{capName},
+      </if>
+      <if test="addTime != null and addTime != ''">
+        add_time = #{addTime},
+      </if>
+      <if test="updateTime != null and updateTime != ''">
+        update_time = #{updateTime},
+      </if>
+      <if test="sourcePlatform != null and sourcePlatform != ''">
+        source_platform = #{sourcePlatform},
+      </if>
+      <if test="fansNum != null and fansNum != ''">
+        fans_num = #{fansNum},
+      </if>
+      <if test="followers != null and followers != ''">
+        followers = #{followers},
+      </if>
+      <if test="likes != null and likes != ''">
+        likes = #{likes},
+      </if>
+      <if test="videos != null and videos != ''">
+        videos = #{videos},
+      </if>
+      <if test="livestreamings != null and livestreamings != ''">
+        livestreamings = #{livestreamings},
+      </if>
+      <if test="videoGpmMin != null and videoGpmMin != ''">
+        video_gpm_min = #{videoGpmMin},
+      </if>
+      <if test="videoGpmMax != null and videoGpmMax != ''">
+        video_gpm_max = #{videoGpmMax},
+      </if>
+      <if test="liveGpmMin != null and liveGpmMin != ''">
+        live_gpm_min = #{liveGpmMin},
+      </if>
+      <if test="liveGpmMax != null and liveGpmMax != ''">
+        live_gpm_max = #{liveGpmMax},
+      </if>
+      <if test="nationalRank != null and nationalRank != ''">
+        national_rank = #{nationalRank},
+      </if>
+      <if test="relatedShops != null and relatedShops != ''">
+        related_shops = #{relatedShops},
+      </if>
+      <if test="promotedProducts != null and promotedProducts != ''">
+        promoted_products = #{promotedProducts},
+      </if>
+      <if test="productCategoriesTop1 != null and productCategoriesTop1 != ''">
+        product_categories_top1 = #{productCategoriesTop1},
+      </if>
+      <if test="productCategoriesProportionTop1 != null and productCategoriesProportionTop1 != ''">
+        product_categories_proportion_top1 = #{productCategoriesProportionTop1},
+      </if>
+      <if test="productCategoriesTop2 != null and productCategoriesTop2 != ''">
+        product_categories_top2 = #{productCategoriesTop2},
+      </if>
+      <if test="productCategoriesProportionTop2 != null and productCategoriesProportionTop2 != ''">
+        product_categories_proportion_top2 = #{productCategoriesProportionTop2},
+      </if>
+      <if test="productCategoriesTop3 != null and productCategoriesTop3 != ''">
+        product_categories_top3 = #{productCategoriesTop3},
+      </if>
+      <if test="productCategoriesProportionTop3 != null and productCategoriesProportionTop3 != ''">
+        product_categories_proportion_top3 = #{productCategoriesProportionTop3},
+      </if>
+      <if test="productCategoriesTop4 != null and productCategoriesTop4 != ''">
+        product_categories_top4 = #{productCategoriesTop4},
+      </if>
+      <if test="productCategoriesProportionTop4 != null and productCategoriesProportionTop4 != ''">
+        product_categories_proportion_top4 = #{productCategoriesProportionTop4},
+      </if>
+      <if test="productCategoriesTop5 != null and productCategoriesTop5 != ''">
+        product_categories_top5 = #{productCategoriesTop5},
+      </if>
+      <if test="productCategoriesProportionTop5 != null and productCategoriesProportionTop5 != ''">
+        product_categories_proportion_top5 = #{productCategoriesProportionTop5},
+      </if>
+      <if test="fans1824Percent != null and fans1824Percent != ''">
+        fans_18_24_percent = #{fans1824Percent},
+      </if>
+      <if test="fans2534Percent != null and fans2534Percent != ''">
+        fans_25_34_percent = #{fans2534Percent},
+      </if>
+      <if test="fans35AbovePercent != null and fans35AbovePercent != ''">
+        fans_35_above_percent = #{fans35AbovePercent},
+      </if>
+      <if test="femalePercent != null and femalePercent != ''">
+        female_percent = #{femalePercent},
+      </if>
+      <if test="malePercent != null and malePercent != ''">
+        male_percent = #{malePercent},
+      </if>
+      <if test="recent30VideosViews != null and recent30VideosViews != ''">
+        recent_30_videos_views = #{recent30VideosViews},
+      </if>
+      <if test="recent30VideosLikes != null and recent30VideosLikes != ''">
+        recent_30_videos_likes = #{recent30VideosLikes},
+      </if>
+      <if test="recent30VideosComments != null and recent30VideosComments != ''">
+        recent_30_videos_comments = #{recent30VideosComments},
+      </if>
+      <if test="recent30VideosShares != null and recent30VideosShares != ''">
+        recent_30_videos_shares = #{recent30VideosShares},
+      </if>
+      <if test="recent30DaysGmv != null and recent30DaysGmv != ''">
+        recent_30_days_gmv = #{recent30DaysGmv},
+      </if>
+      <if test="videoslikesGained7days != null and videoslikesGained7days != ''">
+        videoslikes_gained_7days = #{videoslikesGained7days},
+      </if>
+      <if test="ecommerceLives7days != null and ecommerceLives7days != ''">
+        ecommerce_lives_7days = #{ecommerceLives7days},
+      </if>
+      <if test="videos7days != null and videos7days != ''">
+        videos_7days = #{videos7days},
+      </if>
+      <if test="followersGained7days != null and followersGained7days != ''">
+        followers_gained_7days = #{followersGained7days},
+      </if>
+      <if test="videoIpm7days != null and videoIpm7days != ''">
+        video_ipm_7days = #{videoIpm7days},
+      </if>
+      <if test="ecommerceVideos28days != null and ecommerceVideos28days != ''">
+        ecommerce_videos_28days = #{ecommerceVideos28days},
+      </if>
+      <if test="productsPromotedInVideos28days != null and productsPromotedInVideos28days != ''">
+        products_promoted_in_videos_28days = #{productsPromotedInVideos28days},
+      </if>
+      <if test="fansMainAge != null and fansMainAge != ''">
+        fans_main_age = #{fansMainAge},
+      </if>
+      <if test="fansMainSex != null and fansMainSex != ''">
+        fans_main_sex = #{fansMainSex},
+      </if>
+      <if test="videoGmv28days != null and videoGmv28days != ''">
+        video_gmv_28days = #{videoGmv28days},
+      </if>
+      <if test="liveGmv28days != null and liveGmv28days != ''">
+        live_gmv_28days = #{liveGmv28days},
+      </if>
+      <if test="totalGmv28days != null and totalGmv28days != ''">
+        total_gmv_28days = #{totalGmv28days},
+      </if>
+      <if test="productEcommerceOrdersMax != null and productEcommerceOrdersMax != ''">
+        product_ecommerce_orders_max = #{productEcommerceOrdersMax},
+      </if>
+    </set>
+    where creator_id = #{creatorId}
+  </update>
+
+  <!--通过主键删除-->
+  <delete id="deleteById">
+    delete
+    from creator_info
+    where creator_id = #{creatorId}
+  </delete>
+</mapper>
