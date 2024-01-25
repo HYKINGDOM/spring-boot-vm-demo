@@ -76,7 +76,7 @@ public class TraceIdUtil {
      * @return
      */
     private static String createTraceId() {
-        return IdUtil.getSnowflake().nextIdStr() + System.currentTimeMillis() + getRandomString() + getProcessId();
+        return IdUtil.getSnowflake().nextIdStr() + System.currentTimeMillis() + getProcessId();
     }
 
     private static String ipToLong(String ipString) {

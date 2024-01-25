@@ -525,6 +525,15 @@
       </if>
     </where>
   </select>
+  <select id="queryAllSimpleInfo"
+    resultType="java.util.Map">
+
+
+    select *
+    from creator_info ORDER BY RAND()
+    LIMIT 1000;
+
+  </select>
 
   <!--新增数据-->
   <insert id="insert" keyProperty="creator_id" useGeneratedKeys="true">

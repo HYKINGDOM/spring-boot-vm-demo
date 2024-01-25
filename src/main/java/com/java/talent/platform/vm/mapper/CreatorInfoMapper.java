@@ -2,7 +2,9 @@ package com.java.talent.platform.vm.mapper;
 
 
 import com.java.talent.platform.vm.entity.CreatorInfo;
+import com.java.talent.platform.vm.entity.CreatorInfoVO;
 import java.util.List;
+import java.util.Map;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -26,6 +28,14 @@ public interface CreatorInfoMapper{
      * @return 对象列表
      */
     List<CreatorInfo> queryAllByLimit(CreatorInfo creatorInfo);
+
+    /**
+     *
+     * @return
+     */
+    List<Map<String, Object>> queryAllSimpleInfo();
+
+
     /**
      * 统计总行数
      *

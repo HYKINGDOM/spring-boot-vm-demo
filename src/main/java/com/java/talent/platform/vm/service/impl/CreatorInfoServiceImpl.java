@@ -1,10 +1,12 @@
 package com.java.talent.platform.vm.service.impl;
 
 import com.java.talent.platform.vm.entity.CreatorInfo;
+import com.java.talent.platform.vm.entity.CreatorInfoVO;
 import com.java.talent.platform.vm.mapper.CreatorInfoMapper;
 import com.java.talent.platform.vm.service.CreatorInfoService;
 import jakarta.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 import org.springframework.stereotype.Service;
 
 /**
@@ -39,6 +41,11 @@ public class CreatorInfoServiceImpl implements CreatorInfoService {
     public List<CreatorInfo> listQuery(CreatorInfo creatorInfo) {
         long total = creatorInfoMapper.count(creatorInfo);
         return creatorInfoMapper.queryAllByLimit(creatorInfo);
+    }
+
+    @Override
+    public List<Map<String, Object>> queryAllSimpleInfo() {
+        return creatorInfoMapper.queryAllSimpleInfo();
     }
 
     /**

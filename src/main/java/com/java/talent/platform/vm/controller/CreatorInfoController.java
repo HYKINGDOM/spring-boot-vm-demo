@@ -2,8 +2,10 @@ package com.java.talent.platform.vm.controller;
 
 import com.java.talent.platform.vm.common.R;
 import com.java.talent.platform.vm.entity.CreatorInfo;
+import com.java.talent.platform.vm.entity.CreatorInfoVO;
 import com.java.talent.platform.vm.service.CreatorInfoService;
 import java.util.List;
+import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,6 +41,13 @@ public class CreatorInfoController {
     public R<List<CreatorInfo>> pagingQuery(@RequestBody CreatorInfo creatorInfo) {
         return R.ok(creatorInfoService.listQuery(creatorInfo));
     }
+
+
+    @GetMapping("/info")
+    public R<List<Map<String, Object>>> getCreatorInfoVO() {
+        return R.ok(creatorInfoService.queryAllSimpleInfo());
+    }
+
 
     /**
      * 新增数据

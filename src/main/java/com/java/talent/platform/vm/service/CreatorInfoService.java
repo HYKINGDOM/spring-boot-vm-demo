@@ -1,7 +1,9 @@
 package com.java.talent.platform.vm.service;
 
 import com.java.talent.platform.vm.entity.CreatorInfo;
+import com.java.talent.platform.vm.entity.CreatorInfoVO;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author kscs
@@ -19,6 +21,9 @@ public interface CreatorInfoService {
      * @return 查询结果
      */
     List<CreatorInfo> listQuery(CreatorInfo creatorInfo);
+
+
+    List<Map<String, Object>> queryAllSimpleInfo();
 
     /**
      * 新增数据
