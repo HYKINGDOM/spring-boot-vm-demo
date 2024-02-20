@@ -1,5 +1,8 @@
 ## JDK21 + springboot3 + GraalVM native 21 + virtual Thread
 
+#### 简介
+本文介绍了如何结合使用JDK 21、Spring Boot 3.2.1、GraalVM Native Image和Virtual Threads技术来提升Java应用程序的启动速度和性能。文档提供了详细的环境准备、项目配置、打包和启动步骤，并对比了使用GraalVM Native Image打包的应用程序与传统jar包启动耗时的差异。通过这些技术，应用程序的启动时间得到了显著的缩短，从而提高了用户体验。
+
 
 #### 准备环境
 
