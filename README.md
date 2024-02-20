@@ -77,3 +77,20 @@ mvn clean native:compile -Pnative
 
 作为对比,jar包启动耗时：3.735秒
 ![img.png](img/img.png)
+
+
+#### 简单对比
+
+开启虚拟线程/jar包运行
+![img.png](img/img_11.png)
+
+关闭虚拟线程/jar包运行
+![img.png](img/img_14.png)
+
+开启虚拟线程/exe运行
+![img_1.png](img/img_12.png)
+
+
+关闭虚拟线程/exe运行
+
+![img.png](img/img_13.png)
