@@ -31,7 +31,7 @@ public class CreatorInfoController {
 
 
     @GetMapping("/info")
-    public R<List<CreatorSimpleInfo>> getCreatorInfoVO() {
+    public R<List<CreatorInfo>> getCreatorInfoVO() {
         return R.ok(creatorInfoService.queryAllSimpleInfo());
     }
 

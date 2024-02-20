@@ -30,7 +30,7 @@ public interface CreatorInfoDao extends JpaRepository<CreatorInfo, Long> {
      *
      * @return
      */
-    @Query(value = "select creatorId,creatorName from CreatorInfo")
-    List<CreatorSimpleInfo> queryAllSimpleInfo();
+    @Query(value = "select c from CreatorInfo c ORDER BY RAND () LIMIT 100")
+    List<CreatorInfo> queryAllSimpleInfo();
 
 }

@@ -16,6 +16,6 @@ public interface CreatorInfoService {
 
 
 
-    List<CreatorSimpleInfo> queryAllSimpleInfo();
+    List<CreatorInfo> queryAllSimpleInfo();
 
 }
