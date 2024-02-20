@@ -1,6 +1,5 @@
 package com.java.talent.platform.vm.config;
 
-import cn.hutool.core.util.StrUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.java.talent.platform.vm.util.TraceIdUtil;
 import jakarta.annotation.Resource;
@@ -58,7 +57,7 @@ public class RequestLogFilter extends OncePerRequestFilter {
             parameter = path.substring(contextPath.length());
         }
 
-        if (StrUtil.contains(parameter, "/")) {
+        if (parameter.contains("/")) {
             parameter = parameter.substring(parameter.lastIndexOf("/") + 1);
         }
 
@@ -68,7 +67,7 @@ public class RequestLogFilter extends OncePerRequestFilter {
     @SneakyThrows
     private void logRequestBody(CachedHttpServletRequestWrapper request) {
 
-        if (StrUtil.equals(request.getContentType(), MediaType.APPLICATION_JSON_VALUE)) {
+        if (null != request.getContentType() && request.getContentType().equals(MediaType.APPLICATION_JSON_VALUE)) {
             log.info("========== body: {}", objectMapper.readTree(request.getInputStream()));
         }
 

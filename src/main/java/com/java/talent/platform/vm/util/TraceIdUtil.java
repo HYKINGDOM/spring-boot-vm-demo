@@ -1,7 +1,5 @@
 package com.java.talent.platform.vm.util;
 
-import cn.hutool.core.util.IdUtil;
-import cn.hutool.core.util.StrUtil;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import java.util.UUID;
@@ -45,7 +43,7 @@ public class TraceIdUtil {
      */
     public static String getTraceId() {
         String traceId = MDC.get(DEFAULT_TRACE_ID);
-        if (StrUtil.isEmpty(traceId)) {
+        if (null == traceId || "".equalsIgnoreCase(traceId)) {
             traceId = createTraceId();
             MDC.put(DEFAULT_TRACE_ID, traceId);
         }
@@ -76,7 +74,7 @@ public class TraceIdUtil {
      * @return
      */
     private static String createTraceId() {
-        return IdUtil.getSnowflake().nextIdStr() + System.currentTimeMillis() + getProcessId();
+        return System.currentTimeMillis() + getProcessId();
     }
 
     private static String ipToLong(String ipString) {
