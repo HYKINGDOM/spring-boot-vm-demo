@@ -15,7 +15,7 @@ import org.springframework.util.StreamUtils;
  */
 public class CachedHttpServletRequestWrapper extends HttpServletRequestWrapper {
 
-    private byte[] cachedByteArray;
+    private final byte[] cachedByteArray;
 
     @SneakyThrows
     public CachedHttpServletRequestWrapper(HttpServletRequest request) {
